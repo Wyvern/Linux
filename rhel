@@ -1,0 +1,38 @@
+sudo passwd root
+su
+sudo echo LC_ALL="en_US.utf-8" >> /etc/environment 
+sudo echo LC_CTYPE="en_US.utf-8" >> /etc/environment 
+
+chattr -ais /etc/ssh/sshd_config
+vi /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAuthentication yes
+
+yum remove -y abrt sysstat sos libreport logrotate rsyslogd
+systemctl mask systemd-journald.service systemd-journald.socket
+
+yum autoremove -y
+timedatectl set-timezone Asia/Shanghai
+package-cleanup --oldkernels --count=1
+
+yum install zsh -y
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+~/.zshrc
+ZSH_THEME="ys"
+plugins=(yum sudo systemd git docker npm)
+
+sudo truncate -s 0 /var/log/*tmp
+sudo chattr +i /var/log/*tmp
+
+//PIP install
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install -U pip
+
+
+/etc/selinux/config
+SELINUX=disabled
+getenforce
+Disabled
+
