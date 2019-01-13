@@ -1,5 +1,5 @@
 wget https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-x64.tar.xz
 tar xf node-v10.15.0-linux-x64.tar.xz
-cd node-v10.15.0-linux-x64.tar.xz
+cd node-v10.15.0-linux-x64
 cp -r bin/ lib/ include/ /usr
 
