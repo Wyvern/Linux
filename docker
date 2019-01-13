@@ -1,0 +1,5 @@
+wget https://download.docker.com/linux/static/stable/s390x/docker-18.06.1-ce.tgz
+tar xf docker-18.06.1-ce.tgz
+cd docker-18.06.1-ce
+cp * /usr/local/bin
+docker --version
