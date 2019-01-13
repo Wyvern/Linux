@@ -8,6 +8,6 @@ alias f='free -h'
 alias t='tree -h'
 alias h='curl -I'
 alias bl='bash -l'
-alias ar='yum autoremove'
-alias pc='package-cleanup --oldkernels --count=1'
 alias i='curl ipinfo.io'
+alias u='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+
