@@ -1,0 +1,9 @@
+yum install autoconf curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel
+
+make configure
+./configure --prefix=/usr/local
+make -j 
+make install
+
+//for uninstall
+make -n install 
