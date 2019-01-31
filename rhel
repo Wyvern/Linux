@@ -8,8 +8,8 @@ vi /etc/ssh/sshd_config
 PermitRootLogin yes
 PasswordAuthentication yes
 
-yum remove -y abrt sysstat sos libreport logrotate rsyslogd
-systemctl mask systemd-journald.service systemd-journald.socket
+yum remove -y abrt sysstat sos libreport logrotate rsyslogd audit firewalld subscription-manager
+systemctl mask auditd.service systemd-journald.service systemd-journald.socket
 
 yum autoremove -y
 timedatectl set-timezone Asia/Shanghai
