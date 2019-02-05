@@ -1,7 +1,6 @@
 sudo passwd root
 su
 sudo apt-get purge audit ufw rsyslog logrotate sysstat python3-problem-report sosreport apport watchdog popularity-contest   
-
 sudo systemctl mask auditd.service systemd-journald.service systemd-journald.socket
 
 echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
@@ -9,7 +8,8 @@ echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure tzdata
 
-sudo apt-get install curl zsh tree htop deborphan nload dialog
+sudo apt-get install -y curl zsh tree htop deborphan nload dialog vim-enhanced
+
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ~/.zshrc
