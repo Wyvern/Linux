@@ -1,7 +1,7 @@
 sudo passwd root
 su
 sudo apt-get purge audit ufw rsyslog logrotate sysstat python3-problem-report sosreport apport watchdog popularity-contest   
-sudo systemctl mask auditd.service systemd-journald.service systemd-journald.socket
+sudo systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target 
 
 echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
