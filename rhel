@@ -9,7 +9,7 @@ PermitRootLogin yes
 PasswordAuthentication yes
 
 yum remove -y abrt sysstat sos libreport logrotate rsyslogd tuned audit firewalld subscription-manager
-systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target 
+systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target rhel-dmesg.service  
 yum install -y vim-enhanced
 
 yum autoremove -y
