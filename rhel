@@ -8,7 +8,7 @@ vi /etc/ssh/sshd_config
 PermitRootLogin yes
 PasswordAuthentication yes
 
-yum remove -y abrt sysstat sos libreport logrotate rsyslogd tuned audit firewalld subscription-manager
+yum remove -y abrt sysstat sos libreport logrotate rsyslogd tuned audit firewalld subscription-manager kexec-tools
 systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target rhel-dmesg.service  
 yum install -y vim-enhanced
 
