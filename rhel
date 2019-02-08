@@ -9,10 +9,10 @@ PermitRootLogin yes
 PasswordAuthentication yes
 
 yum remove -y abrt sysstat sos libreport logrotate rsyslogd tuned audit firewalld subscription-manager kexec-tools
+yum autoremove -y
 systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target rhel-dmesg.service  
 yum install -y vim-enhanced
 
-yum autoremove -y
 timedatectl set-timezone Asia/Shanghai
 package-cleanup --oldkernels --count=1
 
