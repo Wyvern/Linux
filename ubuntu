@@ -33,5 +33,11 @@ sudo truncate -s 0 /var/log/*tmp
 sudo chattr +i /var/log/*tmp
 sudo ln -s /dev/null /var/log/alternatives.log
 
+//PIP install
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+pip install pipupgrade
+pip install -U pip
+
 echo deb https://downloads.plex.tv/repo/deb ./public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
 curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
