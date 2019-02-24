@@ -2,7 +2,8 @@ wget http://hisham.hm/htop/releases/2.2.0/htop-2.2.0.tar.gz
 tar xf htop-2.2.0.tar.gz
 cd htop-2.2.0
 ./configure
-make -j
+make LDFLAGS+=-s -j 
+
 strip *
 cp htop /usr/local/bin
 
