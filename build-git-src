@@ -1,9 +1,10 @@
-yum install autoconf curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel
+yum install autoconf curl-devel expat-devel openssl-devel perl-devel zlib-devel
 
 make configure
-./configure --prefix=/usr/local
-make -j 
-make install
+./configure --prefix=/usr/local --without-tcltk
+make NO_TCLTK=Yes NO_MSGFMT=Yes NO_GETTEXT=Yes -j 
+strip git*
+make NO_TCLTK=Yes NO_MSGFMT=Yes NO_GETTEXT=Yes install
 
 //for uninstall
 make -n install 
