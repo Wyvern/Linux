@@ -9,5 +9,6 @@ alias t='tree -h'
 alias h='curl -I'
 alias bl='bash -l'
 alias i='curl ipinfo.io'
+alias mj='make LDFLAGS+=-s -j'
 alias u='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
