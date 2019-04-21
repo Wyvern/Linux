@@ -1,5 +1,10 @@
-wget https://download.docker.com/linux/static/stable/s390x/docker-18.06.1-ce.tgz
+wget https://download.docker.com/linux/static/stable/s390x/docker-18.06.3-ce.tgz
 tar xf docker-18.06.1-ce.tgz
 cd docker-18.06.1-ce
 cp * /usr/local/bin
 docker --version
+
+docker run --name vpn --restart=always -d -p 500:500/udp -p 4500:4500/udp --privileged -v /lib/modules:/lib/modules:ro  wyvern/vpn
+docker run --name ss --restart=always -d -p 443:443/tcp -p 443:443/udp   wyvern/ss
+docker run --name bt --restart=always -d -p 80:123 -v /bt:/downloads wyvern/ct  --port 123 -a bt:asdf
+docker run --name kms --restart=always -d -p 1688:1688 wyvern/kms
