@@ -1,5 +1,9 @@
 sudo passwd root
 su
+
+echo nameserver 176.103.130.130 > /etc/resolv.conf 
+echo nameserver 176.103.130.131 >> /etc/resolv.conf 
+
 sudo echo LC_ALL="en_US.utf-8" >> /etc/environment 
 sudo echo LC_CTYPE="en_US.utf-8" >> /etc/environment 
 
@@ -32,6 +36,11 @@ python get-pip.py
 pip install -U pip
 pip install pipupgrade
 
+sysctl  net.ipv6.conf.all.disable_ipv6=1
+sysctl  net.ipv6.conf.default.disable_ipv6=1
+
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 /etc/selinux/config
 SELINUX=disabled
