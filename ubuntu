@@ -43,6 +43,20 @@ python get-pip.py
 pip install pipupgrade
 pip install -U pip
 
+pip install onedrivecmd
+onedrivecmd init_business
+
+pip install --upgrade google-api-python-client oauth2client progressbar2
+wget https://github.com/tokland/youtube-upload/archive/master.zip
+unzip master.zip
+cd youtube-upload-master/
+python setup.py install
+vi /usr/lib/python2.7/site-packages/youtube_upload/main.py
+from oauth2client import file
+
+#odyt 
+git clone https://github.com/wyvern/odyt
+
 sysctl  net.ipv6.conf.all.disable_ipv6=1
 sysctl  net.ipv6.conf.default.disable_ipv6=1
 
