@@ -3,6 +3,7 @@ su
 
 echo nameserver 176.103.130.130 > /etc/resolv.conf 
 echo nameserver 176.103.130.131 >> /etc/resolv.conf 
+cat /etc/resolv.conf 
 
 sudo apt-get purge -y audit ufw rsyslog logrotate sysstat python3-problem-report sosreport apport watchdog popularity-contest   
 sudo systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target 
@@ -12,8 +13,7 @@ echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure tzdata
 
-sudo apt-get install -y curl zsh tree htop deborphan nload dialog vim-enhanced
-
+sudo apt-get install -y curl zsh tree unzip htop deborphan nload dialog vim-enhanced
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ~/.zshrc
@@ -40,12 +40,21 @@ sudo ln -s /dev/null /var/log/alternatives.log
 //PIP install
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
-pip install pipupgrade
-pip install -U pip
+pip install pip-review pkgconfig speedtest-cli
+pip install onedrivecmd google-api-python-client oauth2client progressbar2
+wget https://github.com/tokland/youtube-upload/archive/master.zip
+unzip master.zip
+cd youtube-upload-master/
+python setup.py install
+vi /usr/lib/python2.7/site-packages/youtube_upload/main.py
 
+from oauth2client import file
+pip-review -a
+
+#onedrivecmd
 pip install onedrivecmd
 onedrivecmd init_business
-
+#yuoutube
 pip install --upgrade google-api-python-client oauth2client progressbar2
 wget https://github.com/tokland/youtube-upload/archive/master.zip
 unzip master.zip
@@ -56,9 +65,13 @@ from oauth2client import file
 
 #odyt 
 git clone https://github.com/wyvern/odyt
+cp odyt/.* .
 
 sysctl  net.ipv6.conf.all.disable_ipv6=1
 sysctl  net.ipv6.conf.default.disable_ipv6=1
+
+sysctl  net.ipv6.conf.all.disable_ipv6=0
+sysctl  net.ipv6.conf.default.disable_ipv6=0
 
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
