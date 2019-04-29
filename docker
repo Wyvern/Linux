@@ -4,6 +4,7 @@ cd docker
 cp * /usr/local/bin
 
 docker --version
+dockerd &
 
 docker run --name vpn --restart=always -d -p 500:500/udp -p 4500:4500/udp --privileged -v /lib/modules:/lib/modules:ro  wyvern/strongswan:ssl
 docker run --name ss --restart=always -d -p 443:443/tcp -p 443:443/udp   wyvern/ss:ibm
