@@ -1,8 +1,13 @@
-yum install autoconf curl-devel expat-devel openssl-devel perl-devel zlib-devel
+wget https://github.com/git/git/archive/v2.21.0.tar.gz
+tar xf v2.21.0.tar.gz 
+cd git-2.21.0 
 
+yum install -y autoconf curl-devel expat-devel openssl-devel perl-devel zlib-devel
 make configure
 ./configure --prefix=/usr/local --without-tcltk
 make NO_TCLTK=Yes NO_MSGFMT=Yes NO_GETTEXT=Yes LDFLAGS+=-s -j install 
+yum remove -y git
+yum autoremove
 
 //for uninstall
 make -n install 
