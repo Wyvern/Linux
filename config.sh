@@ -1,6 +1,5 @@
 echo nameserver 176.103.130.130 > /etc/resolv.conf 
 echo nameserver 176.103.130.131 >> /etc/resolv.conf 
-cat /etc/resolv.conf 
 
 sudo echo LC_ALL="en_US.utf-8" >> /etc/environment 
 sudo echo LC_CTYPE="en_US.utf-8" >> /etc/environment 
