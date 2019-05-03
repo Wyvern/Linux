@@ -51,3 +51,4 @@ package-cleanup -y --oldkernels --count=1
 
 cd ~
 rm -rf *
+
