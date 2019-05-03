@@ -33,15 +33,15 @@ $(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.alias)
 EOF
 
 
-sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/git-node-docker)”
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/git-node-docker)"
 
 cd ~
 
-sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/Python)”
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/Python)"
 
 cd ~
 
-sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/pip)”
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/pip)"
 
 cat <<EOF >/usr/local/lib/python3.7/site-packages/youtube_upload/main.py
 $(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/main.py)
