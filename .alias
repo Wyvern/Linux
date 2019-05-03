@@ -12,3 +12,6 @@ alias i='curl ipinfo.io'
 alias mj='make LDFLAGS+=-s -j'
 alias u='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
+alias op='onedrivecmd put'
+alias yt='youtube-upload --privacy=private --title '
+
