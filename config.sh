@@ -271,6 +271,25 @@ source $ZSH/oh-my-zsh.sh
 source /root/.alias
 EOF
 
+cat <<EOF>/root/.alias
+alias p='ps -axf'
+alias l='ls -lh'
+alias gi='grep -i'
+alias pn='p|gi'
+alias df='df -h'
+alias du='du -sh'
+alias f='free -h'
+alias t='tree -h'
+alias h='curl -I'
+alias bl='bash -l'
+alias i='curl ipinfo.io'
+alias mj='make LDFLAGS+=-s -j'
+alias yar='yum autoremove'
+alias pc='package-cleanup --oldkernels --count=1'
+alias op='onedrivecmd put'
+alias yt='youtube-upload --privacy=private --title '
+EOF
+
 sudo truncate -s 0 /var/log/*tmp
 sudo chattr +i /var/log/*tmp
 sysctl  net.ipv6.conf.all.disable_ipv6=1
