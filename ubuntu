@@ -5,7 +5,7 @@ echo nameserver 176.103.130.130 > /etc/resolv.conf
 echo nameserver 176.103.130.131 >> /etc/resolv.conf 
 cat /etc/resolv.conf 
 
-sudo apt-get purge -y audit ufw rsyslog logrotate sysstat python3-problem-report sosreport apport watchdog popularity-contest   
+sudo apt purge -y audit ufw rsyslog logrotate sysstat python3-problem-report sosreport apport watchdog popularity-contest   
 sudo systemctl mask auditd.service systemd-journald.service systemd-journald.socket syslog.socket syslog.target 
 
 echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
@@ -13,7 +13,7 @@ echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
 sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure tzdata
 
-sudo apt-get install -y curl zsh tree unzip htop deborphan nload dialog vim-enhanced
+sudo apt install -y curl zsh tree unzip htop deborphan nload dialog vim-enhanced
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ~/.zshrc
@@ -24,12 +24,12 @@ sudo add-apt-repository ppa:git-core/ppa
 
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install docker-ce git
+sudo apt update
+sudo apt install docker-ce git
 sudo usermod -aG docker $(whoami)
 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install nodejs
+sudo apt install nodejs
 
 sudo chown -R $USER:$(id -gn $USER) /home/$USER/.config
 
@@ -65,7 +65,7 @@ from oauth2client import file
 
 #odyt 
 git clone https://github.com/wyvern/odyt
-cp odyt/.* .
+cp odyt/.* ~
 
 sysctl  net.ipv6.conf.all.disable_ipv6=1
 sysctl  net.ipv6.conf.default.disable_ipv6=1
