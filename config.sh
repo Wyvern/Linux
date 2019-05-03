@@ -37,11 +37,11 @@ sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/git-n
 
 cd ~
 
-sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/Python”
+sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/Python)”
 
 cd ~
 
-sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/pip”
+sh -c “$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/pip)”
 
 yum autoremove -y
 package-cleanup -y --oldkernels --count=1
