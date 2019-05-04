@@ -7,9 +7,9 @@ make configure
 ./configure --prefix=/usr/local --without-tcltk
 make NO_TCLTK=Yes NO_MSGFMT=Yes NO_GETTEXT=Yes LDFLAGS+=-s -j install 
 yum remove -y git
-yum autoremove
+yum autoremove -y
 
 //for uninstall
 make -n install 
-
-make LDFLAGS+=-s -j  install
+#Link with strip
+make LDFLAGS+=-s -j install
