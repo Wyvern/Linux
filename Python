@@ -1,5 +1,7 @@
-wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
-tar xf Python-3.7.3.tar.xz
-cd  Python-3.7.3
+PYTHON=3.7.3
+
+wget https://www.python.org/ftp/python/$PYTHON/Python-$PYTHON.tar.xz
+tar xf Python-$PYTHON.tar.xz
+cd  Python-$PYTHON
 ./configure --prefix=/usr/local --enable-optimizations --with-lto
 make LDFLAGS+=-s -j install
