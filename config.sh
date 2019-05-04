@@ -22,12 +22,15 @@ yum install -y vim-enhanced zsh tree unzip bind-utils
 yum autoremove -y
 timedatectl set-timezone Asia/Shanghai
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/git-node-docker)"
+wget https://github.com/Wyvern/Linux/raw/s390x/htop
+wget https://github.com/Wyvern/Linux/raw/s390x/unrar
+chmod a+x htop unrar
+mv htop unrar /usr/local/bin
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/git-node-docker)"
 cd ~
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/Python)"
-
 cd ~
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/pip)"
