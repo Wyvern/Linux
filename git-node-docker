@@ -1,6 +1,11 @@
-wget https://github.com/git/git/archive/v2.21.0.tar.gz
-tar xf v2.21.0.tar.gz 
-cd git-2.21.0 
+#Version of Git Nodejs Docker
+GIT=2.21.0
+NODE=8.16.0
+DOCKER=18.06.3
+
+wget https://github.com/git/git/archive/v$GIT.tar.gz
+tar xf v$GIT.tar.gz 
+cd git-$GIT
 
 yum install -y autoconf curl-devel expat-devel openssl-devel perl-devel zlib-devel libffi-devel
 make configure
@@ -9,15 +14,15 @@ make NO_TCLTK=Yes NO_MSGFMT=Yes NO_GETTEXT=Yes LDFLAGS+=-s -j install
 yum remove -y git
 yum autoremove -y
 
-wget https://nodejs.org/dist/latest-v8.x/node-v8.16.0-linux-s390x.tar.gz
-tar xf node-v8.16.0-linux-s390x.tar.gz
-cd node-v8.16.0-linux-s390x
+wget https://nodejs.org/dist/latest-v8.x/node-v$NODE-linux-s390x.tar.gz
+tar xf node-v$NODE-linux-s390x.tar.gz
+cd node-v$NODE-linux-s390x
 strip -s **/*
 cp -r bin/ include/ lib/ share/ /usr/local/
 npm -g up
 
-wget https://download.docker.com/linux/static/stable/s390x/docker-18.06.3-ce.tgz
-tar xf docker-18.06.3-ce.tgz
+wget https://download.docker.com/linux/static/stable/s390x/docker-$DOCKER-ce.tgz
+tar xf docker-$DOCKER-ce.tgz
 cd docker
 strip -s *
 cp * /usr/local/bin
