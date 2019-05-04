@@ -22,6 +22,7 @@ yum install -y vim-enhanced zsh tree unzip bind-utils
 yum autoremove -y
 timedatectl set-timezone Asia/Shanghai
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+logout
 
 cat<<EOF>.zshrc
 $(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.zshrc)
