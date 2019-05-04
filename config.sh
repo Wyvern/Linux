@@ -52,3 +52,5 @@ EOF
 cat<<EOF>/root/.alias
 $(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.alias)
 EOF
+
+git clone https://github.com/wyvern/odyt
