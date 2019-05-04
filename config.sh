@@ -21,17 +21,6 @@ systemctl mask auditd.service systemd-journald.service systemd-journald.socket s
 yum install -y vim-enhanced zsh tree unzip bind-utils
 yum autoremove -y
 timedatectl set-timezone Asia/Shanghai
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-logout
-
-cat<<EOF>.zshrc
-$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.zshrc)
-EOF
-
-cat<<EOF>/root/.alias
-$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.alias)
-EOF
-
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/git-node-docker)"
 
@@ -53,3 +42,13 @@ package-cleanup -y --oldkernels --count=1
 cd ~
 rm -rf *
 
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+logout
+
+cat<<EOF>.zshrc
+$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.zshrc)
+EOF
+
+cat<<EOF>/root/.alias
+$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.alias)
+EOF
