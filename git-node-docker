@@ -28,7 +28,7 @@ strip -s *
 cp * /usr/local/bin
 dockerd &
 
-docker run --name vpn --restart=always -d -p 500:500/udp -p 4500:4500/udp --privileged -v /lib/modules:/lib/modules:ro  wyvern/strongswan:ssl
+docker run --name vpn --restart=always -d -p 500:500/udp -p 4500:4500/udp --privileged -v /lib/modules:/lib/modules:ro  wyvern/vpn:ibm
 docker run --name ss --restart=always -d -p 443:443/tcp -p 443:443/udp   wyvern/ss:ibm
 docker run --name bt --restart=always -d -p 80:123 -v /bt:/downloads wyvern/ct:ibm  --port 123 -a bt:asdf
 docker run --name kms --restart=always -d -p 1688:1688 wyvern/kms:ibm
