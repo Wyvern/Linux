@@ -45,8 +45,6 @@ package-cleanup -y --oldkernels --count=1
 cd ~
 rm -rf *
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 cat<<EOF>.zshrc
 $(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.zshrc)
 EOF
@@ -54,5 +52,7 @@ EOF
 cat<<EOF>/root/.alias
 $(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/.alias)
 EOF
+
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git clone https://github.com/wyvern/odyt
