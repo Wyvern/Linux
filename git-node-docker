@@ -1,6 +1,6 @@
 #Version of Git Nodejs Docker
-GIT=2.22.0
-NODE=8.16.0
+GIT=2.23.0
+NODE=8.16.1
 DOCKER=18.06.3
 
 wget https://github.com/git/git/archive/v$GIT.tar.gz
