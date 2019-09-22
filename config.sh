@@ -6,8 +6,8 @@ sudo echo LC_CTYPE="en_US.utf-8" >> /etc/environment
 
 sudo truncate -s 0 /var/log/*tmp
 sudo chattr +i /var/log/*tmp
-#sysctl  net.ipv6.conf.all.disable_ipv6=1
-#sysctl  net.ipv6.conf.default.disable_ipv6=1
+sysctl  net.ipv6.conf.all.disable_ipv6=1
+sysctl  net.ipv6.conf.default.disable_ipv6=1
 chattr -ais /etc/ssh/sshd_config
 
 cat<<EOF>/etc/ssh/sshd_config
