@@ -1,5 +1,5 @@
-wget https://nodejs.org/dist/latest-v8.x/node-v8.16.0-linux-s390x.tar.gz
-tar xf node-v8.16.0-linux-s390x.tar.gz
-cd node-v8.16.0-linux-s390x
+wget https://nodejs.org/dist/latest-v8.x/node-v8.16.2-linux-s390x.tar.gz
+tar xf node-v8.16.2-linux-s390x.tar.gz
+cd node-v8.16.2-linux-s390x
 cp -r bin/ include/ lib/ share/ /usr/local/
 npm -g up
