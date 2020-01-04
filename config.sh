@@ -35,10 +35,6 @@ cd ~
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/pip)"
 
-cat <<EOF >/usr/local/lib/python3.7/site-packages/youtube_upload/main.py
-$(curl -fsSL https://raw.githubusercontent.com/Wyvern/Linux/s390x/main.py)
-EOF
-
 yum autoremove -y
 package-cleanup -y --oldkernels --count=1
 
