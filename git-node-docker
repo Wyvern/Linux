@@ -1,5 +1,5 @@
 #Version of Git Nodejs Docker
-GIT=2.24.1
+GIT=2.25.1
 NODE=8.17.0
 DOCKER=18.06.3
 
